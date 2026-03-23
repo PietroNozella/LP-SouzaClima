@@ -1,0 +1,102 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+
+const WHATSAPP_NUMBER = "5511987189560";
+const WHATSAPP_MSG = encodeURIComponent("Olá! Gostaria de solicitar um orçamento.");
+
+export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { label: "Serviços", href: "#servicos" },
+    { label: "Diferenciais", href: "#diferenciais" },
+    { label: "Como Funciona", href: "#como-funciona" },
+    { label: "Depoimentos", href: "#depoimentos" },
+  ];
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#1B3A5C] shadow-lg">
+      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+        {/* Logo */}
+        <a href="#" className="flex items-center">
+          <Image
+            src="/images/logo.png"
+            alt="Souza Clima"
+            width={140}
+            height={48}
+            className="h-10 w-auto object-contain"
+          />
+        </a>
+
+        {/* Nav desktop */}
+        <nav className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-white/80 hover:text-[#C8A96E] text-sm font-medium transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        {/* CTA desktop */}
+        <a
+          href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:flex items-center gap-2 bg-[#C8A96E] hover:bg-[#b8965a] text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors"
+        >
+          {/* WhatsApp icon */}
+          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.84L.057 23.428a.5.5 0 0 0 .609.637l5.703-1.496A11.951 11.951 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.359-.213-3.723.977.994-3.634-.233-.374A9.818 9.818 0 1 1 12 21.818z" />
+          </svg>
+          Solicitar Orçamento
+        </a>
+
+        {/* Hamburger mobile */}
+        <button
+          className="md:hidden text-white p-2"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Menu"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            {menuOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button>
+      </div>
+
+      {/* Menu mobile */}
+      {menuOpen && (
+        <div className="md:hidden bg-[#122844] px-4 pb-4 flex flex-col gap-3">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              className="text-white/80 hover:text-[#C8A96E] text-sm font-medium py-1 transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 flex items-center justify-center gap-2 bg-[#C8A96E] text-white text-sm font-semibold px-4 py-2 rounded-full"
+          >
+            Solicitar Orçamento
+          </a>
+        </div>
+      )}
+    </header>
+  );
+}

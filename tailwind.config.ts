@@ -9,8 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        // Paleta Souza Clima
+        navy: {
+          DEFAULT: "#1B3A5C",
+          dark: "#122844",
+          light: "#254d7a",
+        },
+        accent: "#C8A96E", // dourado para CTAs e destaques
+        "off-white": "#F5F7FA",
+      },
+      fontFamily: {
+        serif: ["var(--font-playfair)", "Georgia", "serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
     },
   },
