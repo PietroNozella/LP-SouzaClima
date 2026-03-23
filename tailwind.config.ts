@@ -35,10 +35,15 @@ const config: Config = {
           "0%, 100%": { opacity: "1", transform: "translateY(0)" },
           "50%": { opacity: "0.5", transform: "translateY(6px)" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.6s ease-out forwards",
         "pulse-soft": "pulse-soft 1.8s ease-in-out infinite",
+        marquee: "marquee 18s linear infinite",
       },
     },
   },
