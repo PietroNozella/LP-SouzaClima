@@ -39,8 +39,8 @@ const differentials = [
 
 export default function Differentials() {
   return (
-    <section id="diferenciais" className="py-20 bg-[#F5F7FA]">
-      <div className="max-w-6xl mx-auto px-4">
+    <section id="diferenciais" className="py-16 md:py-20 bg-[#F5F7FA]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Cabeçalho */}
         <div className="text-center mb-14">
           <span className="inline-block bg-[#1B3A5C]/10 text-[#1B3A5C] text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">

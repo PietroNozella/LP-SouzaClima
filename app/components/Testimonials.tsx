@@ -30,8 +30,8 @@ function StarIcon() {
 
 export default function Testimonials() {
   return (
-    <section id="depoimentos" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
+    <section id="depoimentos" className="py-16 md:py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Cabeçalho */}
         <div className="text-center mb-14">
           <span className="inline-block bg-[#1B3A5C]/10 text-[#1B3A5C] text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">

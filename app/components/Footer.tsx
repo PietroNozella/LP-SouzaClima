@@ -3,9 +3,9 @@ const WHATSAPP_MSG = encodeURIComponent("Olá! Gostaria de solicitar um orçamen
 
 export default function Footer() {
   return (
-    <footer className="bg-[#122844] text-white/60 py-10">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+    <footer className="bg-[#122844] text-white/60 py-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-10">
           {/* Marca */}
           <div>
             <p className="font-serif text-white text-lg font-bold mb-2">Souza Clima</p>
@@ -16,7 +16,7 @@ export default function Footer() {
           {/* Serviços */}
           <div>
             <p className="text-white text-sm font-semibold mb-3">Serviços</p>
-            <ul className="space-y-1 text-sm">
+            <ul className="space-y-2 text-sm">
               <li>Instalação</li>
               <li>Manutenção</li>
               <li>Higienização</li>

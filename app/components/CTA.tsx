@@ -3,8 +3,8 @@ const WHATSAPP_MSG = encodeURIComponent("Olá! Gostaria de solicitar um orçamen
 
 export default function CTA() {
   return (
-    <section className="py-20 bg-[#F5F7FA]">
-      <div className="max-w-3xl mx-auto px-4 text-center">
+    <section className="py-16 md:py-20 bg-[#F5F7FA]">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
         <span className="inline-block bg-[#1B3A5C]/10 text-[#1B3A5C] text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
           Pronto para começar?
         </span>
