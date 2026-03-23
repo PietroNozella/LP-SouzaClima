@@ -4,6 +4,7 @@ import Services from "./components/Services";
 import Differentials from "./components/Differentials";
 import HowItWorks from "./components/HowItWorks";
 import Testimonials from "./components/Testimonials";
+import Portfolio from "./components/Portfolio";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import SectionDivider from "./components/SectionDivider";
@@ -22,9 +23,11 @@ export default function Home() {
         <HowItWorks />
         <SectionDivider fromColor="#1B3A5C" toColor="#ffffff" flip />
         <Testimonials />
-        <SectionDivider fromColor="#ffffff" toColor="#F5F7FA" />
+        <SectionDivider fromColor="#ffffff" toColor="#ffffff" />
+        <Portfolio />
+        <SectionDivider fromColor="#ffffff" toColor="#F5F7FA" flip />
         <CTA />
-        <SectionDivider fromColor="#F5F7FA" toColor="#122844" flip />
+        <SectionDivider fromColor="#F5F7FA" toColor="#122844" />
       </main>
       <Footer />
     </>
