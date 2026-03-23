@@ -1,3 +1,7 @@
+"use client";
+
+import AnimatedSection from "./AnimatedSection";
+
 const differentials = [
   {
     number: "01",
@@ -41,33 +45,30 @@ export default function Differentials() {
   return (
     <section id="diferenciais" className="py-16 md:py-20 bg-[#F5F7FA]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Cabeçalho */}
-        <div className="text-center mb-14">
+        <AnimatedSection className="text-center mb-14">
           <span className="inline-block bg-[#1B3A5C]/10 text-[#1B3A5C] text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
             Por que nos escolher
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#1B3A5C]">
+          <h2 className="font-serif heading-serif text-3xl md:text-4xl font-bold text-[#1B3A5C]">
             O que faz a diferença na Souza Clima
           </h2>
-        </div>
+        </AnimatedSection>
 
-        {/* Grid de diferenciais */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {differentials.map((diff) => (
-            <div
-              key={diff.number}
-              className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow"
-            >
-              <span className="font-serif text-4xl font-bold text-[#C8A96E]/30 block mb-3">
-                {diff.number}
-              </span>
-              <h3 className="font-semibold text-[#1B3A5C] text-lg mb-2">
-                {diff.title}
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                {diff.description}
-              </p>
-            </div>
+          {differentials.map((diff, i) => (
+            <AnimatedSection key={diff.number} delay={i * 100}>
+              <div className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-navy-md transition-all duration-300 h-full">
+                <span className="font-serif text-4xl font-bold text-[#C8A96E]/30 block mb-3">
+                  {diff.number}
+                </span>
+                <h3 className="font-semibold text-[#1B3A5C] text-lg mb-2">
+                  {diff.title}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  {diff.description}
+                </p>
+              </div>
+            </AnimatedSection>
           ))}
         </div>
       </div>

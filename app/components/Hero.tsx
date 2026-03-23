@@ -1,11 +1,66 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import { useIntersectionObserver } from "@/app/hooks/useIntersectionObserver";
 
 const WHATSAPP_NUMBER = "5511987189560";
 const WHATSAPP_MSG = encodeURIComponent("Olá! Gostaria de solicitar um orçamento.");
 
+// Counter animado com requestAnimationFrame
+function AnimatedCounter({ target, suffix = "+" }: { target: number; suffix?: string }) {
+  const [count, setCount] = useState(0);
+  const [started, setStarted] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  // Dispara quando o elemento entra no viewport
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStarted(true);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Loop com rAF ao iniciar
+  useEffect(() => {
+    if (!started) return;
+    const duration = 1800;
+    const start = performance.now();
+
+    let rafId: number;
+    const tick = (now: number) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // easing easeOutQuart
+      const eased = 1 - Math.pow(1 - progress, 4);
+      setCount(Math.floor(eased * target));
+      if (progress < 1) rafId = requestAnimationFrame(tick);
+    };
+
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
+  }, [started, target]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+}
+
 export default function Hero() {
+  const sectionRef = useIntersectionObserver<HTMLElement>({ threshold: 0.05 });
+
   return (
-    <section className="relative min-h-screen flex items-center bg-[#1B3A5C] overflow-hidden pt-20">
+    <section
+      ref={sectionRef}
+      className="animate-on-scroll relative min-h-screen flex items-center bg-[#1B3A5C] overflow-hidden pt-20"
+    >
       {/* Padrão de fundo sutil */}
       <div
         className="absolute inset-0 opacity-5"
@@ -26,7 +81,7 @@ export default function Hero() {
               São Paulo Capital
             </span>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5">
+            <h1 className="font-serif heading-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5">
               Climatização com{" "}
               <span className="text-[#C8A96E]">qualidade</span> e{" "}
               <span className="text-[#C8A96E]">pontualidade</span>
@@ -60,7 +115,7 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Selos de confiança — wrap em mobile */}
+            {/* Selos de confiança */}
             <div className="mt-10 flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-sm text-white/50">
               {["Atendimento rápido", "Prazo garantido", "Técnicos qualificados"].map((selo) => (
                 <div key={selo} className="flex items-center gap-2">
@@ -71,22 +126,50 @@ export default function Hero() {
                 </div>
               ))}
             </div>
+
+            {/* Counter de clientes */}
+            <div className="mt-8 inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-2xl px-5 py-3">
+              <span className="font-serif text-3xl font-bold text-[#C8A96E]">
+                <AnimatedCounter target={500} />
+              </span>
+              <span className="text-white/60 text-sm leading-tight">
+                clientes<br />atendidos
+              </span>
+            </div>
           </div>
 
-          {/* Foto do técnico — visível em mobile também, mas menor */}
+          {/* Foto do técnico com badge flutuante */}
           <div className="flex items-center justify-center mt-8 md:mt-0">
-            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-              <Image
-                src="/images/hero.jpg"
-                alt="Técnico Souza Clima instalando ar-condicionado"
-                fill
-                className="object-cover object-center"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1B3A5C]/40 to-transparent" />
+            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-[3/4]">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-navy-lg border border-white/10">
+                <Image
+                  src="/images/hero.jpg"
+                  alt="Técnico Souza Clima instalando ar-condicionado"
+                  fill
+                  className="object-cover object-center"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1B3A5C]/40 to-transparent" />
+              </div>
+
+              {/* Badge flutuante */}
+              <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-xl px-3 py-2 shadow-navy-md flex items-center gap-2">
+                <span className="text-lg">⭐</span>
+                <div>
+                  <p className="text-sm font-bold text-[#1B3A5C] leading-none">4.9</p>
+                  <p className="text-xs text-gray-400 leading-none mt-0.5">no Google</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Chevron de scroll */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-pulse-soft">
+        <svg className="w-6 h-6 text-[#C8A96E]" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
       </div>
     </section>
   );

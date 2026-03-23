@@ -1,3 +1,7 @@
+"use client";
+
+import AnimatedSection from "./AnimatedSection";
+
 const services = [
   {
     title: "Instalação",
@@ -42,61 +46,57 @@ export default function Services() {
     <section id="servicos" className="py-16 md:py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Cabeçalho */}
-        <div className="text-center mb-14">
+        <AnimatedSection className="text-center mb-14">
           <span className="inline-block bg-[#1B3A5C]/10 text-[#1B3A5C] text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
             Nossos Serviços
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#1B3A5C]">
+          <h2 className="font-serif heading-serif text-3xl md:text-4xl font-bold text-[#1B3A5C]">
             Tudo que seu ar-condicionado precisa
           </h2>
           <p className="mt-4 text-gray-500 max-w-xl mx-auto">
             Da instalação à higienização, cuidamos do seu equipamento com
             profissionalismo e agilidade.
           </p>
-        </div>
+        </AnimatedSection>
 
-        {/* Cards */}
+        {/* Cards com delay escalonado */}
         <div className="grid md:grid-cols-3 gap-6">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="group border border-gray-100 rounded-2xl p-8 hover:shadow-lg hover:border-[#C8A96E]/30 transition-all duration-300"
-            >
-              {/* Ícone */}
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-[#1B3A5C]/5 text-[#1B3A5C] group-hover:bg-[#C8A96E]/10 group-hover:text-[#C8A96E] transition-colors mb-6">
-                {service.icon}
+          {services.map((service, i) => (
+            <AnimatedSection key={service.title} delay={i * 150}>
+              <div className="group h-full border border-gray-100 rounded-2xl p-8 hover:shadow-navy-md hover:border-[#C8A96E]/30 transition-all duration-300">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-[#1B3A5C]/5 text-[#1B3A5C] group-hover:bg-[#C8A96E]/10 group-hover:text-[#C8A96E] transition-colors mb-6">
+                  {service.icon}
+                </div>
+
+                <h3 className="font-serif heading-serif text-xl font-bold text-[#1B3A5C] mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed mb-5">
+                  {service.description}
+                </p>
+
+                <ul className="space-y-1 mb-6">
+                  {service.items.map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-sm text-gray-400">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#C8A96E] flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Gostaria de solicitar um orçamento de ${service.title}.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#1B3A5C] hover:text-[#C8A96E] text-sm font-semibold flex items-center gap-1 transition-colors"
+                >
+                  Solicitar orçamento
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </a>
               </div>
-
-              <h3 className="font-serif text-xl font-bold text-[#1B3A5C] mb-3">
-                {service.title}
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-5">
-                {service.description}
-              </p>
-
-              {/* Lista de itens */}
-              <ul className="space-y-1 mb-6">
-                {service.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-gray-400">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C8A96E] flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA */}
-              <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Gostaria de solicitar um orçamento de ${service.title}.`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#1B3A5C] hover:text-[#C8A96E] text-sm font-semibold flex items-center gap-1 transition-colors"
-              >
-                Solicitar orçamento
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </a>
-            </div>
+            </AnimatedSection>
           ))}
         </div>
       </div>

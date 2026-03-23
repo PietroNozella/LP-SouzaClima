@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
+import WhatsAppFloat from "./components/WhatsAppFloat";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -42,7 +43,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${dmSans.variable} ${cormorant.variable}`}>
-      <body className="antialiased font-sans">{children}</body>
+      <body className="antialiased font-sans">
+        {children}
+        <WhatsAppFloat />
+      </body>
     </html>
   );
 }

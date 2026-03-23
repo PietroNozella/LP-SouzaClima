@@ -1,3 +1,7 @@
+"use client";
+
+import AnimatedSection from "./AnimatedSection";
+
 const WHATSAPP_NUMBER = "5511987189560";
 const WHATSAPP_MSG = encodeURIComponent("Olá! Gostaria de solicitar um orçamento.");
 
@@ -26,45 +30,40 @@ export default function HowItWorks() {
   return (
     <section id="como-funciona" className="py-16 md:py-20 bg-[#1B3A5C]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Cabeçalho */}
-        <div className="text-center mb-12 md:mb-14">
+        <AnimatedSection className="text-center mb-12 md:mb-14">
           <span className="inline-block bg-white/10 text-white/70 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
             Processo
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-white">
+          <h2 className="font-serif heading-serif text-3xl md:text-4xl font-bold text-white">
             Como funciona
           </h2>
           <p className="mt-4 text-white/60 max-w-md mx-auto text-sm sm:text-base">
             Três passos simples para ter seu ar-condicionado funcionando perfeitamente.
           </p>
-        </div>
+        </AnimatedSection>
 
-        {/* Steps */}
         <div className="relative">
-          {/* Linha conectora desktop — percorre os 3 círculos */}
+          {/* Linha conectora desktop */}
           <div className="hidden md:block absolute top-8 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-px bg-[#C8A96E]/30" />
 
           <div className="grid md:grid-cols-3 gap-8 md:gap-6">
-            {steps.map((step) => (
-              <div key={step.step} className="relative flex flex-col items-center text-center md:items-center">
-                {/* Número */}
+            {steps.map((step, i) => (
+              <AnimatedSection key={step.step} delay={i * 200} className="flex flex-col items-center text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#C8A96E] text-white font-serif text-2xl font-bold mb-5 relative z-10 flex-shrink-0">
                   {step.step}
                 </div>
-
                 <h3 className="font-semibold text-white text-lg sm:text-xl mb-2">
                   {step.title}
                 </h3>
                 <p className="text-white/60 text-sm leading-relaxed max-w-xs">
                   {step.description}
                 </p>
-              </div>
+              </AnimatedSection>
             ))}
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-12">
+        <AnimatedSection className="text-center mt-12" delay={600}>
           <a
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
             target="_blank"
@@ -77,7 +76,7 @@ export default function HowItWorks() {
             </svg>
             Começar agora
           </a>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );

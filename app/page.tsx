@@ -6,6 +6,7 @@ import HowItWorks from "./components/HowItWorks";
 import Testimonials from "./components/Testimonials";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
+import SectionDivider from "./components/SectionDivider";
 
 export default function Home() {
   return (
@@ -13,11 +14,17 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <SectionDivider fromColor="#1B3A5C" toColor="#ffffff" />
         <Services />
+        <SectionDivider fromColor="#ffffff" toColor="#F5F7FA" flip />
         <Differentials />
+        <SectionDivider fromColor="#F5F7FA" toColor="#1B3A5C" />
         <HowItWorks />
+        <SectionDivider fromColor="#1B3A5C" toColor="#ffffff" flip />
         <Testimonials />
+        <SectionDivider fromColor="#ffffff" toColor="#F5F7FA" />
         <CTA />
+        <SectionDivider fromColor="#F5F7FA" toColor="#122844" flip />
       </main>
       <Footer />
     </>
