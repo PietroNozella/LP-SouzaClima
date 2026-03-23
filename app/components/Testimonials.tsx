@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
 
 const testimonials = [
@@ -33,7 +34,20 @@ function StarIcon() {
 
 export default function Testimonials() {
   return (
-    <section id="depoimentos" className="py-16 md:py-20 bg-white">
+    <section id="depoimentos" className="relative py-16 md:py-20 overflow-hidden">
+      {/* Imagem de fundo desfocada */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/images/bg-depoimentos.jpg"
+          alt=""
+          fill
+          className="object-cover object-center blur-sm scale-105"
+          aria-hidden
+        />
+        {/* Overlay branco para dar ênfase nos cards */}
+        <div className="absolute inset-0 bg-white/85" />
+      </div>
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <AnimatedSection className="text-center mb-14">
           <span className="inline-block bg-[#1B3A5C]/10 text-[#1B3A5C] text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
@@ -47,7 +61,8 @@ export default function Testimonials() {
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <AnimatedSection key={t.name} delay={i * 150}>
-              <div className="h-full border border-gray-100 rounded-2xl p-6 hover:shadow-navy-md transition-all duration-300">
+              {/* Cards com fundo branco sólido para contrastar com o fundo */}
+              <div className="h-full bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-navy-md transition-all duration-300">
                 <div className="flex gap-0.5 mb-4">
                   {Array.from({ length: t.rating }).map((_, i) => (
                     <StarIcon key={i} />
