@@ -5,6 +5,7 @@ import Differentials from "./components/Differentials";
 import HowItWorks from "./components/HowItWorks";
 import Testimonials from "./components/Testimonials";
 import Portfolio from "./components/Portfolio";
+import TrustIndicators from "./components/TrustIndicators";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import SectionDivider from "./components/SectionDivider";
@@ -23,7 +24,9 @@ export default function Home() {
         <HowItWorks />
         <SectionDivider fromColor="#1B3A5C" toColor="#ffffff" flip />
         <Testimonials />
-        <SectionDivider fromColor="#ffffff" toColor="#ffffff" />
+        <SectionDivider fromColor="#ffffff" toColor="#1B3A5C" flip />
+        <TrustIndicators />
+        <SectionDivider fromColor="#1B3A5C/5" toColor="#ffffff" />
         <Portfolio />
         <SectionDivider fromColor="#ffffff" toColor="#F5F7FA" flip />
         <CTA />

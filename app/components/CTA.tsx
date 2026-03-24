@@ -16,6 +16,28 @@ export default function CTA() {
           rápido.
         </p>
 
+        {/* Benefícios rápidos — reduz friction */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 max-w-md mx-auto text-sm">
+          <div className="flex items-center gap-2 text-[#1B3A5C]">
+            <svg className="w-5 h-5 text-[#059669] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            <span>Resposta no mesmo dia</span>
+          </div>
+          <div className="flex items-center gap-2 text-[#1B3A5C]">
+            <svg className="w-5 h-5 text-[#059669] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            <span>Orçamento sem compromisso</span>
+          </div>
+          <div className="flex items-center gap-2 text-[#1B3A5C]">
+            <svg className="w-5 h-5 text-[#059669] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            <span>Profissionais certificados</span>
+          </div>
+        </div>
+
         <a
           href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
           target="_blank"

@@ -44,8 +44,8 @@ export default function Testimonials() {
           className="object-cover object-center blur-sm scale-105"
           aria-hidden
         />
-        {/* Overlay branco para dar ênfase nos cards */}
-        <div className="absolute inset-0 bg-white/85" />
+        {/* Overlay navy light para melhor contraste e trust visual */}
+        <div className="absolute inset-0 bg-[#1B3A5C]/8" />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
