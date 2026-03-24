@@ -44,8 +44,8 @@ export default function Testimonials() {
           className="object-cover object-center blur-sm scale-105"
           aria-hidden
         />
-        {/* Overlay navy light para melhor contraste e trust visual */}
-        <div className="absolute inset-0 bg-[#1B3A5C]/8" />
+        {/* Overlay gradiente para melhor contraste de texto */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1B3A5C]/40 via-[#1B3A5C]/25 to-[#1B3A5C]/40" />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
