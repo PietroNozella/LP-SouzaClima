@@ -47,14 +47,14 @@ export default function Portfolio() {
 
       <AnimatedSection delay={150}>
         <div className="relative w-full">
-          <div className="pointer-events-none absolute bottom-0 left-0 top-0 z-10 w-24 bg-gradient-to-r from-white to-transparent" />
-          <div className="pointer-events-none absolute bottom-0 right-0 top-0 z-10 w-24 bg-gradient-to-l from-white to-transparent" />
+          <div className="pointer-events-none absolute bottom-0 left-0 top-0 z-10 w-12 bg-gradient-to-r from-white to-transparent sm:w-24" />
+          <div className="pointer-events-none absolute bottom-0 right-0 top-0 z-10 w-12 bg-gradient-to-l from-white to-transparent sm:w-24" />
 
           <div className="flex w-max gap-4 animate-marquee hover:[animation-play-state:paused]">
             {track.map((slide, index) => (
               <div
                 key={`${slide.src}-${index}`}
-                className="group relative h-52 w-72 flex-shrink-0 overflow-hidden rounded-[28px] shadow-navy-md md:h-64 md:w-96"
+                className="group relative h-52 w-[82vw] max-w-[20rem] flex-shrink-0 overflow-hidden rounded-[28px] shadow-navy-md sm:w-80 md:h-64 lg:w-96"
               >
                 <Image
                   src={slide.src}

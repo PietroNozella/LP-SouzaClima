@@ -38,7 +38,7 @@ export default function TrustIndicators() {
           </h2>
         </AnimatedSection>
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
           {indicators.map((indicator, idx) => (
             <AnimatedSection
               key={indicator.label}

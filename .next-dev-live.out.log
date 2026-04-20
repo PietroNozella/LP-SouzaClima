@@ -1,0 +1,20 @@
+
+> souza-clima@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3001
+
+ ✓ Starting...
+ ✓ Ready in 1584ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.4s (571 modules)
+ GET / 200 in 2611ms
+ ✓ Compiled in 194ms (270 modules)
+ GET / 200 in 52ms
+ GET / 200 in 52ms
+ ✓ Compiled /favicon.ico in 224ms (324 modules)
+ GET /favicon.ico 200 in 280ms
+ ✓ Compiled in 402ms (562 modules)
+ ✓ Compiled in 557ms (562 modules)
+ ✓ Compiled in 693ms (562 modules)

@@ -54,7 +54,7 @@ export default function MissionVisionValues() {
           </p>
         </AnimatedSection>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {pillars.map((pillar, index) => (
             <AnimatedSection key={pillar.title} delay={index * 120}>
               <article className="h-full rounded-[28px] border border-slate-200 bg-white p-7 shadow-navy-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-navy-md">

@@ -57,10 +57,10 @@ export default function Services() {
           </p>
         </AnimatedSection>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {services.map((service, index) => (
             <AnimatedSection key={service.title} delay={index * 150}>
-              <article className="group h-full rounded-[28px] border border-slate-200 bg-white p-8 shadow-navy-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#1966C9]/20 hover:shadow-navy-md">
+              <article className="group h-full rounded-[28px] border border-slate-200 bg-white p-6 shadow-navy-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#1966C9]/20 hover:shadow-navy-md sm:p-8">
                 <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-[#EAF3FF] text-[#1966C9] transition-colors group-hover:bg-[#1966C9] group-hover:text-white">
                   {service.icon}
                 </div>

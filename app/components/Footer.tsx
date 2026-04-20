@@ -11,7 +11,7 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto max-w-6xl px-4 pb-10 pt-4 sm:px-6">
-        <div className="mb-10 grid grid-cols-1 gap-8 sm:grid-cols-3">
+        <div className="mb-10 grid grid-cols-1 gap-8 text-center md:grid-cols-3 md:text-left">
           <div>
             <p className="mb-2 text-lg font-bold text-white">Souza Clima</p>
             <p className="text-sm">Ar Condicionado e Refrigeração</p>

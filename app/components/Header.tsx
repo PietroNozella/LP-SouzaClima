@@ -8,6 +8,8 @@ const WHATSAPP_MSG = encodeURIComponent("Olá! Gostaria de solicitar um orçamen
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const logoBlueFilter =
+    "brightness(0) saturate(100%) invert(30%) sepia(88%) saturate(1528%) hue-rotate(199deg) brightness(93%) contrast(89%)";
 
   const navLinks = [
     { label: "Serviços", href: "#servicos" },
@@ -18,18 +20,19 @@ export default function Header() {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-slate-200/80 bg-white/92 backdrop-blur">
-      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <a href="#" className="flex flex-shrink-0 items-center">
           <Image
             src="/images/logo.png"
             alt="Souza Clima"
             width={280}
             height={96}
-            className="h-14 w-auto object-contain sm:h-16 md:h-20"
+            className="h-12 w-auto object-contain sm:h-14 lg:h-16"
+            style={{ filter: logoBlueFilter }}
           />
         </a>
 
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-5 lg:flex xl:gap-6">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -45,7 +48,7 @@ export default function Header() {
           href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden flex-shrink-0 items-center gap-2 rounded-full bg-[#1966C9] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#124C97] md:flex"
+          className="hidden flex-shrink-0 items-center gap-2 rounded-full bg-[#1966C9] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#124C97] lg:flex"
         >
           <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
@@ -55,7 +58,7 @@ export default function Header() {
         </a>
 
         <button
-          className="p-2 text-[#1966C9] md:hidden"
+          className="p-2 text-[#1966C9] lg:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
@@ -70,7 +73,7 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div className="flex flex-col gap-1 border-t border-slate-200 bg-white px-4 pb-4 sm:px-6 md:hidden">
+        <div className="max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-slate-200 bg-white px-4 pb-4 sm:px-6 lg:hidden">
           {navLinks.map((link) => (
             <a
               key={link.href}
