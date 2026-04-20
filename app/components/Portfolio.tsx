@@ -21,44 +21,40 @@ const slides = [
   },
   {
     src: "/images/carrossel4.jpg",
-    alt: "Instalação de múltiplas condensadoras Midea",
+    alt: "Instalação de múltiplas condensadoras",
     label: "Instalação",
   },
 ];
 
-// Duplica para loop infinito contínuo
 const track = [...slides, ...slides];
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-16 md:py-20 bg-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <AnimatedSection className="text-center mb-12">
-          <span className="inline-block bg-[#1B3A5C]/10 text-[#1B3A5C] text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
+    <section id="portfolio" className="overflow-hidden bg-white py-16 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <AnimatedSection className="mb-12 text-center">
+          <span className="mb-4 inline-flex rounded-full bg-[#EAF3FF] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#1966C9]">
             Nossos Trabalhos
           </span>
-          <h2 className="font-serif heading-serif text-3xl md:text-4xl font-bold text-[#1B3A5C]">
+          <h2 className="text-3xl font-bold tracking-[-0.03em] text-slate-900 md:text-4xl">
             Serviços realizados
           </h2>
-          <p className="mt-4 text-gray-500 max-w-md mx-auto text-sm">
+          <p className="mx-auto mt-4 max-w-md text-sm text-slate-500">
             Cada projeto entregue com atenção ao detalhe, prazo cumprido e qualidade comprovada.
           </p>
         </AnimatedSection>
       </div>
 
-      {/* Faixa full-width para o marquee */}
       <AnimatedSection delay={150}>
         <div className="relative w-full">
-          {/* Fade nas bordas */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="pointer-events-none absolute bottom-0 left-0 top-0 z-10 w-24 bg-gradient-to-r from-white to-transparent" />
+          <div className="pointer-events-none absolute bottom-0 right-0 top-0 z-10 w-24 bg-gradient-to-l from-white to-transparent" />
 
-          {/* Track animado — pausa no hover */}
-          <div className="flex gap-4 w-max animate-marquee hover:[animation-play-state:paused]">
-            {track.map((slide, i) => (
+          <div className="flex w-max gap-4 animate-marquee hover:[animation-play-state:paused]">
+            {track.map((slide, index) => (
               <div
-                key={i}
-                className="relative flex-shrink-0 w-72 h-52 md:w-96 md:h-64 rounded-2xl overflow-hidden shadow-navy-md group"
+                key={`${slide.src}-${index}`}
+                className="group relative h-52 w-72 flex-shrink-0 overflow-hidden rounded-[28px] shadow-navy-md md:h-64 md:w-96"
               >
                 <Image
                   src={slide.src}
@@ -66,10 +62,8 @@ export default function Portfolio() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#122844]/60 via-transparent to-transparent" />
-                {/* Label */}
-                <span className="absolute bottom-3 left-3 bg-[#C8A96E] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/55 via-transparent to-transparent" />
+                <span className="absolute bottom-3 left-3 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-[#1966C9]">
                   {slide.label}
                 </span>
               </div>

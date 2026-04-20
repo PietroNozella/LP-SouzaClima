@@ -8,7 +8,7 @@ import Portfolio from "./components/Portfolio";
 import TrustIndicators from "./components/TrustIndicators";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
-import SectionDivider from "./components/SectionDivider";
+import MissionVisionValues from "./components/MissionVisionValues";
 
 export default function Home() {
   return (
@@ -16,21 +16,14 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <SectionDivider fromColor="#1B3A5C" toColor="#ffffff" />
-        <Services />
-        <SectionDivider fromColor="#ffffff" toColor="#F5F7FA" flip />
-        <Differentials />
-        <SectionDivider fromColor="#F5F7FA" toColor="#1B3A5C" />
-        <HowItWorks />
-        <SectionDivider fromColor="#1B3A5C" toColor="#ffffff" flip />
-        <Testimonials />
-        <SectionDivider fromColor="#ffffff" toColor="#1B3A5C" flip />
         <TrustIndicators />
-        <SectionDivider fromColor="#1B3A5C/5" toColor="#ffffff" />
+        <Services />
+        <Differentials />
+        <MissionVisionValues />
+        <HowItWorks />
+        <Testimonials />
         <Portfolio />
-        <SectionDivider fromColor="#ffffff" toColor="#F5F7FA" flip />
         <CTA />
-        <SectionDivider fromColor="#F5F7FA" toColor="#122844" />
       </main>
       <Footer />
     </>

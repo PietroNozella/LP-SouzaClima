@@ -15,43 +15,41 @@ const indicators = [
   },
   {
     number: "24h",
-    label: "Resposta garantida",
+    label: "Resposta rápida",
     description: "Atendimento ágil e eficiente",
   },
   {
     number: "100%",
-    label: "Satisfação garantida",
-    description: "Com garantia em todos os serviços",
+    label: "Compromisso no serviço",
+    description: "Garantia em todos os atendimentos",
   },
 ];
 
 export default function TrustIndicators() {
   return (
-    <section className="py-16 md:py-20 bg-[#1B3A5C]/5">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Header */}
-        <AnimatedSection className="text-center mb-14">
-          <span className="inline-block bg-[#1B3A5C]/10 text-[#1B3A5C] text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
-            Por que confiar
+    <section className="bg-white py-10 md:py-12">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <AnimatedSection className="mb-10 text-center">
+          <span className="mb-4 inline-flex rounded-full bg-[#EAF3FF] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#1966C9]">
+            Autoridade
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#1B3A5C]">
+          <h2 className="text-3xl font-bold tracking-[-0.03em] text-slate-900 md:text-4xl">
             Números que falam por si
           </h2>
         </AnimatedSection>
 
-        {/* Grid de indicadores */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
           {indicators.map((indicator, idx) => (
             <AnimatedSection
-              key={idx}
+              key={indicator.label}
               delay={idx * 100}
-              className="text-center p-6 bg-white rounded-lg shadow-navy-sm hover:shadow-navy-md transition-shadow duration-300"
+              className="rounded-[24px] border border-slate-200 bg-[#F8FBFF] p-6 text-center shadow-navy-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-navy-md"
             >
-              <p className="text-4xl md:text-5xl font-bold text-[#C8A96E] mb-2">
+              <p className="mb-2 text-3xl font-bold text-[#1966C9] md:text-4xl">
                 {indicator.number}
               </p>
-              <p className="font-semibold text-[#1B3A5C] mb-2">{indicator.label}</p>
-              <p className="text-sm text-gray-500">{indicator.description}</p>
+              <p className="mb-2 text-sm font-semibold text-slate-900 md:text-base">{indicator.label}</p>
+              <p className="text-xs leading-6 text-slate-500 md:text-sm">{indicator.description}</p>
             </AnimatedSection>
           ))}
         </div>

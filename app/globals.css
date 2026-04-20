@@ -3,22 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --navy: #1B3A5C;
-  --navy-dark: #122844;
-  --accent: #C8A96E;
-  --off-white: #F5F7FA;
+  --primary: #1966c9;
+  --primary-dark: #124c97;
+  --primary-soft: #eaf3ff;
+  --text: #1f2937;
+  --muted: #64748b;
+  --surface: #f7fafc;
 }
 
 * {
+  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
 body {
   background-color: #ffffff;
-  color: #1a1a1a;
+  color: var(--text);
+  font-family: var(--font-sans), system-ui, sans-serif;
 }
 
-/* Animações de entrada via Intersection Observer */
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(24px);
@@ -30,7 +37,6 @@ body {
   transform: translateY(0);
 }
 
-/* Delays escalonados para grupos de cards */
 .animate-delay-100 { transition-delay: 100ms; }
 .animate-delay-200 { transition-delay: 200ms; }
 .animate-delay-300 { transition-delay: 300ms; }
@@ -38,12 +44,6 @@ body {
 .animate-delay-500 { transition-delay: 500ms; }
 .animate-delay-600 { transition-delay: 600ms; }
 
-/* Tipografia refinada para Cormorant Garamond */
-.heading-serif {
-  letter-spacing: -0.02em;
-}
-
-/* Respeitar preferência do sistema por movimento reduzido */
 @media (prefers-reduced-motion: reduce) {
   .animate-on-scroll {
     transition: none;

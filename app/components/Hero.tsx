@@ -6,14 +6,13 @@ import { useIntersectionObserver } from "@/app/hooks/useIntersectionObserver";
 
 const WHATSAPP_NUMBER = "5511987189560";
 const WHATSAPP_MSG = encodeURIComponent("Olá! Gostaria de solicitar um orçamento.");
+const socialProof = ["Mariana R.", "Carlos S.", "Fernanda T."];
 
-// Counter animado com requestAnimationFrame
 function AnimatedCounter({ target, suffix = "+" }: { target: number; suffix?: string }) {
   const [count, setCount] = useState(0);
   const [started, setStarted] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
 
-  // Dispara quando o elemento entra no viewport
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -26,31 +25,39 @@ function AnimatedCounter({ target, suffix = "+" }: { target: number; suffix?: st
       },
       { threshold: 0.5 }
     );
+
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
 
-  // Loop com rAF ao iniciar
   useEffect(() => {
     if (!started) return;
+
     const duration = 1800;
     const start = performance.now();
-
     let rafId: number;
+
     const tick = (now: number) => {
       const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      // easing easeOutQuart
       const eased = 1 - Math.pow(1 - progress, 4);
+
       setCount(Math.floor(eased * target));
-      if (progress < 1) rafId = requestAnimationFrame(tick);
+      if (progress < 1) {
+        rafId = requestAnimationFrame(tick);
+      }
     };
 
     rafId = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(rafId);
   }, [started, target]);
 
-  return <span ref={ref}>{count}{suffix}</span>;
+  return (
+    <span ref={ref}>
+      {count}
+      {suffix}
+    </span>
+  );
 }
 
 export default function Hero() {
@@ -59,117 +66,133 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="animate-on-scroll relative min-h-screen flex items-center bg-[#1B3A5C] overflow-hidden pt-20"
+      className="animate-on-scroll relative overflow-hidden bg-[linear-gradient(135deg,#f8fbff_0%,#eef5ff_42%,#ffffff_100%)] pt-28 md:pt-32"
     >
-      {/* Padrão de fundo sutil */}
       <div
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 opacity-70"
         style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0)`,
-          backgroundSize: "40px 40px",
+          backgroundImage:
+            "radial-gradient(circle at top left, rgba(25,102,201,0.16), transparent 40%), radial-gradient(circle at bottom right, rgba(37,211,102,0.1), transparent 28%)",
         }}
       />
 
-      {/* Gradiente decorativo */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#122844] to-transparent" />
-
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20 w-full">
-        <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-center">
-          {/* Texto */}
-          <div className="text-white text-center md:text-left">
-            <span className="inline-block bg-[#C8A96E]/20 text-[#C8A96E] text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-5">
-              São Paulo Capital
+      <div className="relative mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 md:py-20">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr]">
+          <div className="flex flex-col text-center lg:text-left">
+            <span className="mb-5 inline-flex self-center rounded-full border border-[#1966C9]/15 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#1966C9] shadow-navy-sm lg:self-start">
+              São Paulo capital
             </span>
 
-            <h1 className="font-serif heading-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5">
-              Climatização com{" "}
-              <span className="text-[#C8A96E]">qualidade</span> e{" "}
-              <span className="text-[#C8A96E]">pontualidade</span>
+            <h1 className="max-w-2xl text-4xl font-bold leading-[1.1] tracking-[-0.04em] text-slate-900 sm:text-5xl lg:text-[3.5rem]">
+              Instalação e manutenção de ar-condicionado com atendimento rápido e profissional
             </h1>
 
-            <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 max-w-md mx-auto md:mx-0">
-              Instalação, manutenção e higienização de ar-condicionado para
-              residências e empresas em toda São Paulo capital. Atendimento ágil
-              e prazo garantido.
+            <p className="mx-auto mt-5 max-w-xl text-base leading-8 text-slate-600 sm:text-lg lg:mx-0">
+              Instalação, manutenção e higienização para residências e empresas. Orçamento ágil, serviço limpo e equipe preparada para atender com segurança.
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
               <a
                 href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-[#C8A96E] hover:bg-[#b8965a] text-white font-semibold px-6 py-3.5 rounded-full transition-colors text-sm"
+                className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-4 text-sm font-bold text-white shadow-[0_14px_34px_rgba(37,211,102,0.28)] transition-colors hover:bg-[#20bd5a]"
               >
-                <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
                   <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.84L.057 23.428a.5.5 0 0 0 .609.637l5.703-1.496A11.951 11.951 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.359-.213-3.723.977.994-3.634-.233-.374A9.818 9.818 0 1 1 12 21.818z" />
                 </svg>
-                Solicitar Orçamento
+                Falar no WhatsApp
               </a>
+
               <a
                 href="#servicos"
-                className="flex items-center justify-center gap-2 border border-white/30 hover:border-white/60 text-white font-medium px-6 py-3.5 rounded-full transition-colors text-sm"
+                className="flex items-center justify-center gap-2 rounded-full border border-[#1966C9]/20 bg-white px-6 py-4 text-sm font-bold text-[#1966C9] transition-colors hover:border-[#1966C9]/40 hover:bg-[#EAF3FF]"
               >
-                Ver Serviços
+                Ver serviços
               </a>
             </div>
 
-            {/* Selos de confiança */}
-            <div className="mt-10 flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-sm text-white/50">
-              {["Atendimento rápido", "Prazo garantido", "Técnicos qualificados"].map((selo) => (
-                <div key={selo} className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-[#C8A96E] flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                  {selo}
+            <div className="mt-8 flex flex-col gap-4 lg:items-start">
+              <div className="inline-flex items-center gap-3 self-center rounded-[22px] border border-slate-200 bg-white px-4 py-3 shadow-navy-sm lg:self-start">
+                <div className="flex -space-x-2">
+                  {socialProof.map((person) => (
+                    <span
+                      key={person}
+                      className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-[#EAF3FF] text-xs font-bold text-[#1966C9]"
+                    >
+                      {person.charAt(0)}
+                    </span>
+                  ))}
                 </div>
-              ))}
+
+                <div className="text-left">
+                  <p className="text-sm font-bold text-slate-900">⭐ 4.9 no Google</p>
+                  <p className="text-xs text-slate-500">Atendimento elogiado por clientes reais</p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-slate-500 lg:justify-start">
+                {["Atendimento rápido", "Prazo combinado", "Equipe qualificada"].map((seal) => (
+                  <div key={seal} className="flex items-center gap-2">
+                    <svg className="h-4 w-4 flex-shrink-0 text-[#1966C9]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {seal}
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Counter de clientes */}
-            <div className="mt-8 inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-2xl px-5 py-3">
-              <span className="font-serif text-3xl font-bold text-[#C8A96E]">
+            <div className="mt-8 inline-flex items-center gap-3 self-center rounded-[24px] border border-[#1966C9]/10 bg-white px-5 py-4 shadow-navy-sm lg:self-start">
+              <span className="text-3xl font-bold leading-none text-[#1966C9]">
                 <AnimatedCounter target={500} />
               </span>
-              <span className="text-white/60 text-sm leading-tight">
-                clientes<br />atendidos
+              <span className="text-left text-sm leading-tight text-slate-500">
+                clientes
+                <br />
+                atendidos
               </span>
             </div>
           </div>
 
-          {/* Foto do técnico com badge flutuante */}
-          <div className="flex items-center justify-center mt-8 md:mt-0">
-            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-[3/4]">
-              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-navy-lg border border-white/10">
-                <Image
-                  src="/images/hero.jpg"
-                  alt="Técnico Souza Clima instalando ar-condicionado"
-                  fill
-                  className="object-cover object-center"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1B3A5C]/40 to-transparent" />
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-[32px] bg-[linear-gradient(145deg,rgba(25,102,201,0.14),rgba(255,255,255,0))] blur-2xl" />
+
+            <div className="relative overflow-hidden rounded-[32px] border border-white/80 bg-white p-3 shadow-navy-lg">
+              <div className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-end">
+                <div className="px-3 pt-4 lg:px-6 lg:pt-6">
+                  <span className="inline-flex rounded-full bg-[#EAF3FF] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#1966C9]">
+                    Souza Clima
+                  </span>
+                  <p className="mt-4 max-w-sm text-sm leading-7 text-slate-600">
+                    Uma apresentação mais limpa, confiável e direta, mantendo a estrutura da LP e elevando a percepção de credibilidade.
+                  </p>
+                </div>
+
+                <div className="relative mx-auto h-[420px] w-full max-w-[420px] overflow-hidden rounded-[28px] bg-[linear-gradient(180deg,#f7fbff_0%,#dcecff_100%)]">
+                  <Image
+                    src="/images/hero.jpg"
+                    alt="Técnico da Souza Clima"
+                    fill
+                    priority
+                    className="object-cover object-center"
+                  />
+                </div>
               </div>
 
-              {/* Badge flutuante */}
-              <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-xl px-3 py-2 shadow-navy-md flex items-center gap-2">
-                <span className="text-lg">⭐</span>
-                <div>
-                  <p className="text-sm font-bold text-[#1B3A5C] leading-none">4.9</p>
-                  <p className="text-xs text-gray-400 leading-none mt-0.5">no Google</p>
-                </div>
+              <div className="absolute right-5 top-5 hidden rounded-2xl bg-[#1966C9] px-4 py-3 text-white shadow-navy-md sm:block">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/70">Orçamento</p>
+                <p className="mt-1 text-sm font-bold">Resposta em minutos</p>
+              </div>
+
+              <div className="absolute bottom-5 left-5 rounded-2xl border border-slate-200 bg-white/95 px-4 py-3 shadow-navy-sm backdrop-blur">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Serviço local</p>
+                <p className="mt-1 text-sm font-bold text-slate-900">Atendimento residencial e comercial</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Chevron de scroll */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-pulse-soft">
-        <svg className="w-6 h-6 text-[#C8A96E]" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
       </div>
     </section>
   );

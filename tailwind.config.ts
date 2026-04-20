@@ -9,22 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: {
-          DEFAULT: "#1B3A5C",
-          dark: "#122844",
-          light: "#254d7a",
+        primary: {
+          DEFAULT: "#1966C9",
+          dark: "#124C97",
+          light: "#EAF3FF",
         },
-        accent: "#C8A96E",
-        "off-white": "#F5F7FA",
+        whatsapp: "#25D366",
+        surface: "#F7FAFC",
       },
       fontFamily: {
-        serif: ["var(--font-serif)", "Georgia", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        "navy-sm": "0 2px 8px rgba(27,58,92,0.12)",
-        "navy-md": "0 4px 20px rgba(27,58,92,0.18)",
-        "navy-lg": "0 8px 40px rgba(27,58,92,0.24)",
+        "navy-sm": "0 10px 30px rgba(25,102,201,0.08)",
+        "navy-md": "0 18px 50px rgba(25,102,201,0.12)",
+        "navy-lg": "0 26px 70px rgba(18,76,151,0.16)",
       },
       keyframes: {
         "fade-up": {
@@ -49,4 +48,5 @@ const config: Config = {
   },
   plugins: [],
 };
+
 export default config;
