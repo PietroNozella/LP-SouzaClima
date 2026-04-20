@@ -19,8 +19,10 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 border-b border-slate-200/80 bg-white/92 backdrop-blur">
-      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+    <header className="fixed left-0 right-0 top-0 z-50">
+      <div className="absolute inset-0 border-b border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.94)_100%)] shadow-[0_12px_32px_rgba(15,23,42,0.08)] backdrop-blur-xl" />
+
+      <div className="relative mx-auto flex h-20 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <a href="#" className="flex flex-shrink-0 items-center">
           <Image
             src="/images/logo.png"
@@ -37,7 +39,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-slate-600 transition-colors hover:text-[#1966C9]"
+              className="text-sm font-medium text-slate-700 transition-colors hover:text-[#1966C9]"
             >
               {link.label}
             </a>
@@ -73,13 +75,13 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div className="max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-slate-200 bg-white px-4 pb-4 sm:px-6 lg:hidden">
+        <div className="relative max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-slate-200/80 bg-white/98 px-4 pb-4 shadow-[0_18px_30px_rgba(15,23,42,0.08)] backdrop-blur-xl sm:px-6 lg:hidden">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="border-b border-slate-100 py-3 text-sm font-medium text-slate-600 transition-colors hover:text-[#1966C9]"
+              className="border-b border-slate-100 py-3 text-sm font-medium text-slate-700 transition-colors hover:text-[#1966C9]"
             >
               {link.label}
             </a>
