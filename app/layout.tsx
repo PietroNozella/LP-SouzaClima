@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import WhatsAppFloat from "./components/WhatsAppFloat";
 
-const poppins = Poppins({
-  subsets: ["latin"],
+const geistSans = localFont({
+  src: "./fonts/GeistVF.woff",
   variable: "--font-sans",
-  weight: ["400", "600", "700"],
   display: "swap",
 });
 
@@ -14,6 +13,11 @@ export const metadata: Metadata = {
   title: "Souza Clima | Ar Condicionado e Refrigeração em São Paulo",
   description:
     "Instalação, manutenção e higienização de ar-condicionado em São Paulo capital. Atendimento ágil, prazo garantido e equipe qualificada. Solicite seu orçamento.",
+  icons: {
+    icon: "/images/logo.png",
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
   keywords: [
     "ar condicionado São Paulo",
     "instalação ar condicionado",
@@ -36,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={poppins.variable}>
+    <html lang="pt-BR" className={geistSans.variable}>
       <body className="font-sans antialiased">
         {children}
         <WhatsAppFloat />
