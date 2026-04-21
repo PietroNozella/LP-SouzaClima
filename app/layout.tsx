@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   title: "Souza Clima | Ar Condicionado e Refrigeração em São Paulo",
   description:
     "Instalação, manutenção e higienização de ar-condicionado em São Paulo capital. Atendimento ágil, prazo garantido e equipe qualificada. Solicite seu orçamento.",
+  icons: {
+    icon: "/favicon-sc.png",
+    apple: "/apple-icon-sc.png",
+  },
   keywords: [
     "ar condicionado São Paulo",
     "instalação ar condicionado",
