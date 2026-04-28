@@ -22,10 +22,11 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-[38%_center] md:object-center"
         />
 
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,23,42,0.42)_0%,rgba(15,23,42,0.16)_42%,rgba(15,23,42,0)_72%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.08)_0%,rgba(15,23,42,0.30)_45%,rgba(15,23,42,0.78)_100%)] md:hidden" />
+        <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(15,23,42,0.42)_0%,rgba(15,23,42,0.16)_42%,rgba(15,23,42,0)_72%)] md:block" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.92)_100%)]" />
 
         <div className="relative mx-auto flex min-h-[430px] max-w-6xl items-end px-4 pb-12 sm:px-6 md:min-h-[540px] md:pb-16 lg:min-h-[590px]">
