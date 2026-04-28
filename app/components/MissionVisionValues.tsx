@@ -4,9 +4,9 @@ import AnimatedSection from "./AnimatedSection";
 
 const pillars = [
   {
-    title: "Missão",
+    title: "Miss\u00e3o",
     description:
-      "Entregar climatização com agilidade, cuidado técnico e atendimento que transmite segurança desde o primeiro contato.",
+      "Entregar climatiza\u00e7\u00e3o com agilidade, cuidado t\u00e9cnico e atendimento que transmite seguran\u00e7a desde o primeiro contato.",
     icon: (
       <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9-9 4.03-9 9 4.03 9 9 9Z" />
@@ -15,9 +15,9 @@ const pillars = [
     ),
   },
   {
-    title: "Visão",
+    title: "Vis\u00e3o",
     description:
-      "Ser referência em São Paulo pela combinação entre resposta rápida, execução limpa e serviço bem feito na primeira visita.",
+      "Ser refer\u00eancia em S\u00e3o Paulo pela combina\u00e7\u00e3o entre resposta r\u00e1pida, execu\u00e7\u00e3o limpa e servi\u00e7o bem feito na primeira visita.",
     icon: (
       <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7Z" />
@@ -28,7 +28,7 @@ const pillars = [
   {
     title: "Valores",
     description:
-      "Pontualidade, transparência no orçamento, respeito ao ambiente do cliente e compromisso real com o pós-serviço.",
+      "Pontualidade, transpar\u00eancia no or\u00e7amento, respeito ao ambiente do cliente e compromisso real com o p\u00f3s-servi\u00e7o.",
     icon: (
       <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 21 3.75 16.5V7.5L12 3l8.25 4.5v9L12 21Z" />
@@ -40,17 +40,17 @@ const pillars = [
 
 export default function MissionVisionValues() {
   return (
-    <section className="bg-white py-16 md:py-20">
+    <section id="quem-somos" className="bg-white py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <AnimatedSection className="mb-12 text-center">
           <span className="mb-4 inline-flex rounded-full bg-[#EAF3FF] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#1966C9]">
-            Missão, visão e valores
+            {"Miss\u00e3o, vis\u00e3o e valores"}
           </span>
-          <h2 className="text-3xl font-bold tracking-[-0.03em] text-slate-900 md:text-4xl">
-            Estrutura por trás de um atendimento confiável
+          <h2 className="text-3xl font-bold leading-tight text-[#173B69] md:text-[2.5rem]">
+            {"Estrutura por tr\u00e1s de um atendimento confi\u00e1vel"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-500 sm:text-base">
-            Um serviço técnico transmite mais confiança quando a empresa deixa claro como trabalha e o que sustenta essa entrega.
+            {"Um servi\u00e7o t\u00e9cnico transmite mais confian\u00e7a quando a empresa deixa claro como trabalha e o que sustenta essa entrega."}
           </p>
         </AnimatedSection>
 

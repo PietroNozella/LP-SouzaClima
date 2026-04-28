@@ -1,18 +1,18 @@
 const WHATSAPP_NUMBER = "5511987189560";
-const WHATSAPP_MSG = encodeURIComponent("Olá! Gostaria de solicitar um orçamento.");
+const WHATSAPP_MSG = encodeURIComponent("Ol\u00e1! Gostaria de solicitar um or\u00e7amento.");
 
 export default function CTA() {
   return (
-    <section className="bg-[#1966C9] py-16 md:py-20">
+    <section id="contato" className="bg-[#1966C9] py-16 md:py-20">
       <div className="mx-auto max-w-3xl px-4 text-center text-white sm:px-6">
         <span className="mb-6 inline-flex rounded-full bg-white/14 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white/80">
-          Pronto para começar?
+          {"Pronto para come\u00e7ar?"}
         </span>
-        <h2 className="mb-4 text-3xl font-bold tracking-[-0.03em] md:text-4xl">
-          Fale agora e receba seu orçamento em minutos
+        <h2 className="mb-4 text-3xl font-bold leading-tight md:text-[2.5rem]">
+          {"Fale agora e receba seu or\u00e7amento em minutos"}
         </h2>
         <p className="mx-auto mb-8 max-w-xl text-white/80">
-          Atendimento ágil para toda São Paulo capital, com retorno rápido, alinhamento claro e execução profissional.
+          {"Atendimento \u00e1gil para toda S\u00e3o Paulo capital, com retorno r\u00e1pido, alinhamento claro e execu\u00e7\u00e3o profissional."}
         </p>
 
         <div className="mx-auto mb-8 flex max-w-2xl flex-col justify-center gap-4 text-sm md:flex-row">
@@ -26,7 +26,7 @@ export default function CTA() {
             <svg className="h-5 w-5 flex-shrink-0 text-[#9BF0B5]" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
-            <span>Orçamento sem compromisso</span>
+            <span>{"Or\u00e7amento sem compromisso"}</span>
           </div>
           <div className="flex items-center justify-center gap-2 text-white/85">
             <svg className="h-5 w-5 flex-shrink-0 text-[#9BF0B5]" fill="currentColor" viewBox="0 0 20 20">
@@ -50,7 +50,7 @@ export default function CTA() {
         </a>
 
         <p className="mt-4 text-xs text-white/65">
-          (11) 98718-9560 · Atendimento de segunda a sábado
+          {"(11) 98718-9560 \u00b7 Atendimento de segunda a s\u00e1bado"}
         </p>
       </div>
     </section>

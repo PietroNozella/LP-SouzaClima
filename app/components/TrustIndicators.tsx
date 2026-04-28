@@ -1,58 +1,30 @@
 "use client";
 
-import AnimatedSection from "./AnimatedSection";
-
 const indicators = [
   {
-    number: "10+",
-    label: "Anos de experiência",
-    description: "Conhecimento acumulado em climatização",
+    number: "120+",
+    label: "Instala\u00e7\u00f5es Conclu\u00eddas",
   },
   {
-    number: "500+",
-    label: "Clientes satisfeitos",
-    description: "Residências e empresas em São Paulo",
+    number: "180+",
+    label: "Clientes Satisfeitos",
   },
   {
-    number: "24h",
-    label: "Resposta rápida",
-    description: "Atendimento ágil e eficiente",
-  },
-  {
-    number: "100%",
-    label: "Compromisso no serviço",
-    description: "Garantia em todos os atendimentos",
+    number: "250+",
+    label: "Ar Condicionado Instalado",
   },
 ];
 
 export default function TrustIndicators() {
   return (
-    <section className="bg-white py-10 md:py-12">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <AnimatedSection className="mb-10 text-center">
-          <span className="mb-4 inline-flex rounded-full bg-[#EAF3FF] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#1966C9]">
-            Autoridade
-          </span>
-          <h2 className="text-3xl font-bold tracking-[-0.03em] text-slate-900 md:text-4xl">
-            Números que falam por si
-          </h2>
-        </AnimatedSection>
-
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
-          {indicators.map((indicator, idx) => (
-            <AnimatedSection
-              key={indicator.label}
-              delay={idx * 100}
-              className="rounded-[24px] border border-slate-200 bg-[#F8FBFF] p-6 text-center shadow-navy-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-navy-md"
-            >
-              <p className="mb-2 text-3xl font-bold text-[#1966C9] md:text-4xl">
-                {indicator.number}
-              </p>
-              <p className="mb-2 text-sm font-semibold text-slate-900 md:text-base">{indicator.label}</p>
-              <p className="text-xs leading-6 text-slate-500 md:text-sm">{indicator.description}</p>
-            </AnimatedSection>
-          ))}
-        </div>
+    <section className="bg-[#173B69] text-white">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-white/12 px-4 sm:grid-cols-3 sm:divide-x sm:divide-y-0 sm:px-6">
+        {indicators.map((indicator) => (
+          <div key={indicator.label} className="flex flex-col items-center justify-center px-4 py-5 text-center sm:py-6">
+            <p className="text-3xl font-bold leading-none md:text-4xl">{indicator.number}</p>
+            <p className="mt-2 text-xs font-medium text-white/72 md:text-sm">{indicator.label}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

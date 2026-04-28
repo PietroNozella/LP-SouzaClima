@@ -10,24 +10,24 @@ const geistSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Souza Clima | Ar Condicionado e Refrigeração em São Paulo",
+  title: "Souza Clima | Ar Condicionado e Refrigera\u00e7\u00e3o em S\u00e3o Paulo",
   description:
-    "Instalação, manutenção e higienização de ar-condicionado em São Paulo capital. Atendimento ágil, prazo garantido e equipe qualificada. Solicite seu orçamento.",
+    "Instala\u00e7\u00e3o, manuten\u00e7\u00e3o e higieniza\u00e7\u00e3o de ar-condicionado em S\u00e3o Paulo capital. Atendimento \u00e1gil, prazo garantido e equipe qualificada. Solicite seu or\u00e7amento.",
   icons: {
     icon: "/favicon-sc.png",
     apple: "/apple-icon-sc.png",
   },
   keywords: [
-    "ar condicionado São Paulo",
-    "instalação ar condicionado",
-    "manutenção ar condicionado",
-    "higienização ar condicionado",
+    "ar condicionado S\u00e3o Paulo",
+    "instala\u00e7\u00e3o ar condicionado",
+    "manuten\u00e7\u00e3o ar condicionado",
+    "higieniza\u00e7\u00e3o ar condicionado",
     "Souza Clima",
   ],
   openGraph: {
-    title: "Souza Clima | Ar Condicionado e Refrigeração",
+    title: "Souza Clima | Ar Condicionado e Refrigera\u00e7\u00e3o",
     description:
-      "Instalação, manutenção e higienização de ar-condicionado em São Paulo capital.",
+      "Instala\u00e7\u00e3o, manuten\u00e7\u00e3o e higieniza\u00e7\u00e3o de ar-condicionado em S\u00e3o Paulo capital.",
     locale: "pt_BR",
     type: "website",
   },

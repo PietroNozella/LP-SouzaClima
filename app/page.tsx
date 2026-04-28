@@ -9,6 +9,7 @@ import TrustIndicators from "./components/TrustIndicators";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import MissionVisionValues from "./components/MissionVisionValues";
+import InstallationsGallery from "./components/InstallationsGallery";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Hero />
         <TrustIndicators />
         <Services />
+        <InstallationsGallery />
         <Differentials />
         <MissionVisionValues />
         <HowItWorks />

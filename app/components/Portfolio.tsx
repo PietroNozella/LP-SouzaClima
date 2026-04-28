@@ -6,23 +6,23 @@ import AnimatedSection from "./AnimatedSection";
 const slides = [
   {
     src: "/images/carrossel1.jpg",
-    alt: "Técnico realizando manutenção elétrica em ar-condicionado",
-    label: "Manutenção",
+    alt: "T\u00e9cnico realizando manuten\u00e7\u00e3o el\u00e9trica em ar-condicionado",
+    label: "Manuten\u00e7\u00e3o",
   },
   {
     src: "/images/carrossel2.jpg",
-    alt: "Higienização completa de condensadora",
-    label: "Higienização",
+    alt: "Higieniza\u00e7\u00e3o completa de condensadora",
+    label: "Higieniza\u00e7\u00e3o",
   },
   {
     src: "/images/carrossel3.jpg",
-    alt: "Instalação de sistema de duto em ambiente comercial",
-    label: "Instalação de Duto",
+    alt: "Instala\u00e7\u00e3o de sistema de duto em ambiente comercial",
+    label: "Instala\u00e7\u00e3o de Duto",
   },
   {
     src: "/images/carrossel4.jpg",
-    alt: "Instalação de múltiplas condensadoras",
-    label: "Instalação",
+    alt: "Instala\u00e7\u00e3o de m\u00faltiplas condensadoras",
+    label: "Instala\u00e7\u00e3o",
   },
 ];
 
@@ -36,11 +36,11 @@ export default function Portfolio() {
           <span className="mb-4 inline-flex rounded-full bg-[#EAF3FF] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#1966C9]">
             Nossos Trabalhos
           </span>
-          <h2 className="text-3xl font-bold tracking-[-0.03em] text-slate-900 md:text-4xl">
-            Serviços realizados
+          <h2 className="text-3xl font-bold leading-tight text-[#173B69] md:text-[2.5rem]">
+            {"Servi\u00e7os realizados"}
           </h2>
           <p className="mx-auto mt-4 max-w-md text-sm text-slate-500">
-            Cada projeto entregue com atenção ao detalhe, prazo cumprido e qualidade comprovada.
+            {"Cada projeto entregue com aten\u00e7\u00e3o ao detalhe, prazo cumprido e qualidade comprovada."}
           </p>
         </AnimatedSection>
       </div>

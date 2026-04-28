@@ -5,20 +5,20 @@ import AnimatedSection from "./AnimatedSection";
 const testimonials = [
   {
     name: "Carlos Mendes",
-    role: "Proprietário residencial",
-    text: "Serviço impecável. Chegaram no horário combinado, fizeram a instalação de forma organizada e o preço foi exatamente o que havia sido orçado.",
+    role: "Propriet\u00e1rio residencial",
+    text: "Servi\u00e7o impec\u00e1vel. Chegaram no hor\u00e1rio combinado, fizeram a instala\u00e7\u00e3o de forma organizada e o pre\u00e7o foi exatamente o que havia sido or\u00e7ado.",
     rating: 5,
   },
   {
     name: "Fernanda Lima",
     role: "Gerente comercial",
-    text: "Contratamos para higienização dos aparelhos do escritório. A diferença na qualidade do ar foi imediata. Equipe educada e profissional.",
+    text: "Contratamos para higieniza\u00e7\u00e3o dos aparelhos do escrit\u00f3rio. A diferen\u00e7a na qualidade do ar foi imediata. Equipe educada e profissional.",
     rating: 5,
   },
   {
     name: "Roberto Santos",
-    role: "Administrador de condomínio",
-    text: "Já utilizamos para manutenção de vários equipamentos. Sempre pontuais, explicam tudo que foi feito e o atendimento pelo WhatsApp é muito ágil.",
+    role: "Administrador de condom\u00ednio",
+    text: "J\u00e1 utilizamos para manuten\u00e7\u00e3o de v\u00e1rios equipamentos. Sempre pontuais, explicam tudo que foi feito e o atendimento pelo WhatsApp \u00e9 muito \u00e1gil.",
     rating: 5,
   },
 ];
@@ -39,7 +39,7 @@ export default function Testimonials() {
           <span className="mb-4 inline-flex rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#1966C9] shadow-navy-sm">
             Depoimentos
           </span>
-          <h2 className="text-3xl font-bold tracking-[-0.03em] text-slate-900 md:text-4xl">
+          <h2 className="text-3xl font-bold leading-tight text-[#173B69] md:text-[2.5rem]">
             O que nossos clientes dizem
           </h2>
         </AnimatedSection>
@@ -66,7 +66,7 @@ export default function Testimonials() {
                   </div>
                 </div>
 
-                <span className="absolute bottom-5 right-5 text-4xl leading-none text-slate-100">”</span>
+                <span className="absolute bottom-5 right-5 text-4xl leading-none text-slate-100">{"\""}</span>
               </article>
             </AnimatedSection>
           ))}
