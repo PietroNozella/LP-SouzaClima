@@ -40,10 +40,10 @@ const commitments = [
 
 export default function Differentials() {
   return (
-    <section id="diferenciais" className="bg-[#173B69] py-14 text-white md:py-16">
+    <section id="diferenciais" className="scroll-mt-24 bg-[#173B69] py-14 text-white md:scroll-mt-28 md:py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <AnimatedSection className="mb-9 text-center">
-          <h2 className="text-3xl font-bold leading-tight md:text-[2.5rem]">Nosso compromisso</h2>
+          <h2 className="text-balance text-3xl font-semibold leading-tight md:text-[2.5rem]">Nosso compromisso</h2>
         </AnimatedSection>
 
         <div className="mx-auto grid max-w-4xl gap-8">
@@ -54,7 +54,7 @@ export default function Differentials() {
                   {commitment.icon}
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-white md:text-lg">{commitment.title}</h3>
+                  <h3 className="text-base font-semibold text-white md:text-lg">{commitment.title}</h3>
                   <p className="mt-1 text-sm leading-6 text-white/78">{commitment.description}</p>
                 </div>
               </article>

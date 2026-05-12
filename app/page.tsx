@@ -6,6 +6,8 @@ import HowItWorks from "./components/HowItWorks";
 import Testimonials from "./components/Testimonials";
 import Portfolio from "./components/Portfolio";
 import TrustIndicators from "./components/TrustIndicators";
+import PartnersStrip from "./components/PartnersStrip";
+import PermockSection from "./components/PermockSection";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import MissionVisionValues from "./components/MissionVisionValues";
@@ -18,6 +20,7 @@ export default function Home() {
       <main>
         <Hero />
         <TrustIndicators />
+        <PartnersStrip />
         <Services />
         <InstallationsGallery />
         <Differentials />
@@ -25,6 +28,7 @@ export default function Home() {
         <HowItWorks />
         <Testimonials />
         <Portfolio />
+        <PermockSection />
         <CTA />
       </main>
       <Footer />

@@ -1,25 +1,51 @@
 "use client";
 
+import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
 
-const testimonials = [
+type Testimonial = {
+  name: string;
+  text: string;
+  rating: number;
+  avatarSrc?: string;
+};
+
+const testimonials: Testimonial[] = [
   {
-    name: "Carlos Mendes",
-    role: "Propriet\u00e1rio residencial",
-    text: "Servi\u00e7o impec\u00e1vel. Chegaram no hor\u00e1rio combinado, fizeram a instala\u00e7\u00e3o de forma organizada e o pre\u00e7o foi exatamente o que havia sido or\u00e7ado.",
+    name: "Amanda Barros",
+    text: "Super recomendo. Fizeram a higienização do meu ar e ficou perfeito. Equipe maravilhosa, organizada, cuidadosa e muito educada. Tiraram nossas dúvidas, deixaram tudo limpinho e fizeram um excelente trabalho.",
     rating: 5,
+    avatarSrc: "/images/testimonials/amanda-barros.png",
   },
   {
-    name: "Fernanda Lima",
-    role: "Gerente comercial",
-    text: "Contratamos para higieniza\u00e7\u00e3o dos aparelhos do escrit\u00f3rio. A diferen\u00e7a na qualidade do ar foi imediata. Equipe educada e profissional.",
+    name: "Ivanir Madjarof",
+    text: "Excelente. Informações corretas, esclarecimento de dúvidas, instalação cuidadosa e limpa, além de muita pontualidade. Nada a objetar. Recomendo.",
     rating: 5,
+    avatarSrc: "/images/testimonials/ivanir-madjarof.png",
   },
   {
-    name: "Roberto Santos",
-    role: "Administrador de condom\u00ednio",
-    text: "J\u00e1 utilizamos para manuten\u00e7\u00e3o de v\u00e1rios equipamentos. Sempre pontuais, explicam tudo que foi feito e o atendimento pelo WhatsApp \u00e9 muito \u00e1gil.",
+    name: "Nathália Alencar",
+    text: "Excelente profissional. Sempre conserta o ar-condicionado da minha loja e do salão do meu pai com competência e responsabilidade. É difícil encontrar alguém tão confiável e dedicado. Super recomendo.",
     rating: 5,
+    avatarSrc: "/images/testimonials/nathalia-alencar.png",
+  },
+  {
+    name: "Tuca Santana",
+    text: "Super recomendo a Souza Clima. Atende toda nossa expectativa, deixa o ambiente agradável e, após o serviço, entrega tudo limpinho, organizado, com muita educação e prestatividade.",
+    rating: 5,
+    avatarSrc: "/images/testimonials/tuca-santana.png",
+  },
+  {
+    name: "Paula Medeiros",
+    text: "Empresa super profissional, são atenciosos e atendem rápido. Recomendo.",
+    rating: 5,
+    avatarSrc: "/images/testimonials/paula-medeiros.png",
+  },
+  {
+    name: "Raquel S.",
+    text: "Super recomendo a Souza Clima, pois atende toda nossa expectativa. Além de deixar o ambiente agradável, após o serviço o local fica impecável, limpinho e organizado. Profissional excelente.",
+    rating: 5,
+    avatarSrc: "/images/testimonials/raquel-s.png",
   },
 ];
 
@@ -31,38 +57,51 @@ function StarIcon() {
   );
 }
 
+function TestimonialAvatar({ name, avatarSrc }: Pick<Testimonial, "name" | "avatarSrc">) {
+  if (avatarSrc) {
+    return (
+      <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-full ring-2 ring-[#EAF3FF]">
+        <Image src={avatarSrc} alt={`Foto de perfil de ${name}`} fill className="object-cover" sizes="48px" />
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#EAF3FF] text-sm font-bold text-[#1966C9]">
+      {name.charAt(0)}
+    </div>
+  );
+}
+
 export default function Testimonials() {
   return (
-    <section id="depoimentos" className="bg-[#F8FBFF] py-16 md:py-20">
+    <section id="depoimentos" className="scroll-mt-24 bg-[#F8FBFF] py-16 md:scroll-mt-28 md:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <AnimatedSection className="mb-14 text-center">
           <span className="mb-4 inline-flex rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#1966C9] shadow-navy-sm">
             Depoimentos
           </span>
-          <h2 className="text-3xl font-bold leading-tight text-[#173B69] md:text-[2.5rem]">
+          <h2 className="text-balance text-3xl font-semibold leading-tight text-[#173B69] md:text-[2.5rem]">
             O que nossos clientes dizem
           </h2>
         </AnimatedSection>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {testimonials.map((testimonial, index) => (
-            <AnimatedSection key={testimonial.name} delay={index * 150}>
-              <article className="relative h-full rounded-[28px] border border-slate-200 bg-white p-6 shadow-navy-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-navy-md">
+            <AnimatedSection key={`${testimonial.name}-${index}`} delay={index * 90}>
+              <article className="relative flex h-full flex-col rounded-[28px] border border-slate-200 bg-white p-6 shadow-navy-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-navy-md">
                 <div className="mb-4 flex gap-0.5">
                   {Array.from({ length: testimonial.rating }).map((_, starIndex) => (
                     <StarIcon key={starIndex} />
                   ))}
                 </div>
 
-                <p className="mb-5 text-sm leading-7 text-slate-600">{testimonial.text}</p>
+                <p className="mb-6 flex-1 text-sm leading-7 text-slate-600">{testimonial.text}</p>
 
                 <div className="flex items-center gap-3 border-t border-slate-100 pt-4">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#EAF3FF] text-sm font-bold text-[#1966C9]">
-                    {testimonial.name.charAt(0)}
-                  </div>
+                  <TestimonialAvatar name={testimonial.name} avatarSrc={testimonial.avatarSrc} />
                   <div>
                     <p className="text-sm font-semibold text-slate-900">{testimonial.name}</p>
-                    <p className="text-xs text-slate-400">{testimonial.role}</p>
                   </div>
                 </div>
 

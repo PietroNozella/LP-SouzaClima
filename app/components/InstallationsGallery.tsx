@@ -47,8 +47,8 @@ export default function InstallationsGallery() {
     <section className="bg-white py-12 md:py-14">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <AnimatedSection className="mb-8 text-center">
-          <h2 className="text-3xl font-bold leading-tight text-[#173B69] md:text-[2.5rem]">
-            {"Nossos servi\u00e7os"}
+          <h2 className="text-balance text-3xl font-semibold leading-tight text-[#173B69] md:text-[2.5rem]">
+            {"Instala\u00e7\u00f5es realizadas"}
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-slate-500">
             {"Instala\u00e7\u00f5es realizadas em ambientes residenciais e comerciais."}

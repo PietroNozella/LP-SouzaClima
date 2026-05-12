@@ -28,17 +28,18 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="como-funciona" className="bg-white py-16 md:py-20">
+    <section id="como-funciona" className="scroll-mt-24 bg-white py-16 md:scroll-mt-28 md:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <AnimatedSection className="mb-12 text-center md:mb-14">
           <span className="mb-4 inline-flex rounded-full bg-[#EAF3FF] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#1966C9]">
             Processo
           </span>
-          <h2 className="text-3xl font-bold leading-tight text-[#173B69] md:text-[2.5rem]">
+          <h2 className="text-balance text-3xl font-semibold leading-tight text-[#173B69] md:text-[2.5rem]">
             Como funciona
           </h2>
           <p className="mx-auto mt-4 max-w-md text-sm text-slate-500 sm:text-base">
-            {"Tr\u00eas passos simples para ter seu ar-condicionado funcionando perfeitamente."}
+            <strong className="font-semibold text-slate-700">{"Tr\u00eas passos simples"}</strong>
+            {" para ter seu ar-condicionado funcionando perfeitamente."}
           </p>
         </AnimatedSection>
 
@@ -51,7 +52,7 @@ export default function HowItWorks() {
                 <div className="relative z-10 mb-5 inline-flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-[#1966C9] text-2xl font-bold text-white shadow-navy-md">
                   {step.step}
                 </div>
-                <h3 className="mb-2 text-lg font-bold text-slate-900 sm:text-xl">{step.title}</h3>
+                <h3 className="mb-2 text-lg font-semibold text-slate-900 sm:text-xl">{step.title}</h3>
                 <p className="max-w-xs text-sm leading-7 text-slate-500">{step.description}</p>
               </AnimatedSection>
             ))}

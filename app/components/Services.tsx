@@ -39,11 +39,11 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="servicos" className="bg-white py-12 md:py-14">
+    <section id="servicos" className="scroll-mt-24 bg-white py-12 md:scroll-mt-28 md:py-14">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <AnimatedSection className="mb-8 text-center">
-          <h2 className="text-3xl font-bold leading-tight text-[#173B69] md:text-[2.5rem]">
-            {"Servi\u00e7os principais"}
+          <h2 className="text-balance text-3xl font-semibold leading-tight text-[#173B69] md:text-[2.5rem]">
+            {"O que fazemos"}
           </h2>
         </AnimatedSection>
 
@@ -54,7 +54,7 @@ export default function Services() {
                 <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center text-[#2689cf]">
                   {service.icon}
                 </div>
-                <h3 className="mb-3 text-lg font-bold text-[#173B69]">{service.title}</h3>
+                <h3 className="mb-3 text-lg font-semibold text-[#173B69]">{service.title}</h3>
                 <p className="text-sm leading-6 text-slate-600">{service.description}</p>
               </article>
             </AnimatedSection>

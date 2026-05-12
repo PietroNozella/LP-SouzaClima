@@ -3,13 +3,14 @@ const WHATSAPP_MSG = encodeURIComponent("Ol\u00e1! Gostaria de solicitar um or\u
 
 export default function CTA() {
   return (
-    <section id="contato" className="bg-[#1966C9] py-16 md:py-20">
+    <section id="contato" className="scroll-mt-24 bg-[#1966C9] py-16 md:scroll-mt-28 md:py-20">
       <div className="mx-auto max-w-3xl px-4 text-center text-white sm:px-6">
         <span className="mb-6 inline-flex rounded-full bg-white/14 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white/80">
           {"Pronto para come\u00e7ar?"}
         </span>
-        <h2 className="mb-4 text-3xl font-bold leading-tight md:text-[2.5rem]">
-          {"Fale agora e receba seu or\u00e7amento em minutos"}
+        <h2 className="mb-4 text-balance text-3xl font-semibold leading-tight md:text-[2.5rem]">
+          {"Fale agora e receba seu "}
+          <span className="font-extrabold">{"or\u00e7amento em minutos"}</span>
         </h2>
         <p className="mx-auto mb-8 max-w-xl text-white/80">
           {"Atendimento \u00e1gil para toda S\u00e3o Paulo capital, com retorno r\u00e1pido, alinhamento claro e execu\u00e7\u00e3o profissional."}

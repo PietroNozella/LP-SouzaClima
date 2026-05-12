@@ -15,14 +15,14 @@ const slides = [
     label: "Higieniza\u00e7\u00e3o",
   },
   {
-    src: "/images/carrossel3.jpg",
-    alt: "Instala\u00e7\u00e3o de sistema de duto em ambiente comercial",
-    label: "Instala\u00e7\u00e3o de Duto",
-  },
-  {
     src: "/images/carrossel4.jpg",
     alt: "Instala\u00e7\u00e3o de m\u00faltiplas condensadoras",
     label: "Instala\u00e7\u00e3o",
+  },
+  {
+    src: "/images/carrossel3.jpg",
+    alt: "Instala\u00e7\u00e3o de sistema de duto em ambiente comercial",
+    label: "Instala\u00e7\u00e3o de Duto",
   },
 ];
 
@@ -30,13 +30,13 @@ const track = [...slides, ...slides];
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="overflow-hidden bg-white py-16 md:py-20">
+    <section id="portfolio" className="scroll-mt-24 overflow-hidden bg-white py-16 md:scroll-mt-28 md:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <AnimatedSection className="mb-12 text-center">
           <span className="mb-4 inline-flex rounded-full bg-[#EAF3FF] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#1966C9]">
             Nossos Trabalhos
           </span>
-          <h2 className="text-3xl font-bold leading-tight text-[#173B69] md:text-[2.5rem]">
+          <h2 className="text-balance text-3xl font-semibold leading-tight text-[#173B69] md:text-[2.5rem]">
             {"Servi\u00e7os realizados"}
           </h2>
           <p className="mx-auto mt-4 max-w-md text-sm text-slate-500">

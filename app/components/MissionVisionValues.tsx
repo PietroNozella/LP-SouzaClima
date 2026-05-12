@@ -40,13 +40,13 @@ const pillars = [
 
 export default function MissionVisionValues() {
   return (
-    <section id="quem-somos" className="bg-white py-16 md:py-20">
+    <section id="quem-somos" className="scroll-mt-24 bg-white py-16 md:scroll-mt-28 md:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <AnimatedSection className="mb-12 text-center">
           <span className="mb-4 inline-flex rounded-full bg-[#EAF3FF] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#1966C9]">
             {"Miss\u00e3o, vis\u00e3o e valores"}
           </span>
-          <h2 className="text-3xl font-bold leading-tight text-[#173B69] md:text-[2.5rem]">
+          <h2 className="text-balance text-3xl font-semibold leading-tight text-[#173B69] md:text-[2.5rem]">
             {"Estrutura por tr\u00e1s de um atendimento confi\u00e1vel"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-500 sm:text-base">
@@ -61,7 +61,7 @@ export default function MissionVisionValues() {
                 <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EAF3FF] text-[#1966C9]">
                   {pillar.icon}
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-slate-900">{pillar.title}</h3>
+                <h3 className="mb-3 text-xl font-semibold text-slate-900">{pillar.title}</h3>
                 <p className="text-sm leading-7 text-slate-500">{pillar.description}</p>
               </article>
             </AnimatedSection>

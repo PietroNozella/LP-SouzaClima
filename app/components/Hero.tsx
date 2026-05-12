@@ -31,11 +31,16 @@ export default function Hero() {
 
         <div className="relative mx-auto flex min-h-[430px] max-w-6xl items-end px-4 pb-12 sm:px-6 md:min-h-[540px] md:pb-16 lg:min-h-[590px]">
           <div className="max-w-xl text-white drop-shadow-[0_2px_12px_rgba(15,23,42,0.35)]">
-            <h1 className="text-3xl font-bold leading-tight tracking-[-0.03em] sm:text-4xl md:text-5xl">
-              {"Instala\u00e7\u00e3o e manuten\u00e7\u00e3o de ar-condicionado"}
+            <h1 className="text-balance text-3xl font-semibold leading-tight tracking-[-0.02em] sm:text-4xl md:text-5xl">
+              {"Instala\u00e7\u00e3o e manuten\u00e7\u00e3o de "}
+              <span className="font-extrabold">{"ar-condicionado"}</span>
             </h1>
             <p className="mt-4 max-w-lg text-sm leading-7 text-white/92 sm:text-base">
-              {"Atendimento residencial e comercial em S\u00e3o Paulo, com servi\u00e7o t\u00e9cnico, organizado e seguro."}
+              {"Atendimento "}
+              <strong className="font-semibold text-white">{"residencial e comercial"}</strong>
+              {" em S\u00e3o Paulo, com servi\u00e7o "}
+              <strong className="font-semibold text-white">{"t\u00e9cnico, organizado e seguro"}</strong>
+              {"."}
             </p>
             <div className="mt-6 flex">
               <a

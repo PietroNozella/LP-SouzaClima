@@ -42,7 +42,7 @@ export default function Header() {
             width={641}
             height={130}
             priority
-            className="h-auto w-[min(62vw,18rem)] object-contain sm:w-[20rem] lg:w-[20.5rem] xl:w-[22rem]"
+            className="h-auto w-[min(60vw,17rem)] object-contain sm:w-[19rem] lg:w-[18.5rem] xl:w-[20rem]"
           />
         </a>
 
