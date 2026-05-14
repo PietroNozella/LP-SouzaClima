@@ -48,10 +48,10 @@ export default function InstallationsGallery() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <AnimatedSection className="mb-8 text-center">
           <h2 className="text-balance text-3xl font-semibold leading-tight text-[#173B69] md:text-[2.5rem]">
-            {"Instala\u00e7\u00f5es realizadas"}
+            {"Instala\u00e7\u00f5es e Manuten\u00e7\u00f5es Realizadas"}
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-slate-500">
-            {"Instala\u00e7\u00f5es realizadas em ambientes residenciais e comerciais."}
+            {"Instala\u00e7\u00f5es e manuten\u00e7\u00f5es realizadas em ambientes residenciais e comerciais."}
           </p>
         </AnimatedSection>
 
