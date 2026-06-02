@@ -9,7 +9,7 @@ const partners = [
     src: "/images/partners/dpv.jpeg",
   },
   {
-    name: "Modelo Cont\u00e1bil",
+    name: "Modelo Contábil",
     src: "/images/partners/modelo-contabil.jpeg",
   },
   {
@@ -114,7 +114,7 @@ export function BrandSpecialistsStrip() {
   return (
     <LogoStrip
       eyebrow="Marcas"
-      title="Assist\u00eancia especializada nas principais marcas"
+      title="Assistência especializada nas principais marcas"
       description="Trabalhamos com os principais fabricantes de ar-condicionado do mercado."
       logos={specialistBrands}
       gridClassName="sm:grid-cols-2 lg:grid-cols-3"
@@ -127,7 +127,7 @@ export default function PartnersStrip() {
     <LogoStrip
       eyebrow="Parceiros"
       title="Empresas que confiam no nosso trabalho"
-      description="Parcerias que refor\u00e7am nossa credibilidade em instala\u00e7\u00e3o, manuten\u00e7\u00e3o e atendimento profissional."
+      description="Parcerias que reforçam nossa credibilidade em instalação, manutenção e atendimento profissional."
       logos={partners}
       gridClassName="sm:grid-cols-2 lg:grid-cols-3"
     />
