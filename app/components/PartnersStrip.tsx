@@ -9,41 +9,53 @@ const partners = [
     src: "/images/partners/dpv.jpeg",
   },
   {
-    name: "Modelo Contábil",
+    name: "Modelo Cont\u00e1bil",
     src: "/images/partners/modelo-contabil.jpeg",
+  },
+  {
+    name: "LOPSA",
+    src: "/images/partners/lopsa.png",
   },
 ];
 
 const specialistBrands = [
   {
-    name: "Agratto",
-    src: "/images/brands/agratto-logo.png",
+    name: "Daikin",
   },
   {
-    name: "Gree",
-    src: "/images/brands/gree-logo.jpg",
+    name: "Fujitsu",
   },
   {
     name: "LG",
     src: "/images/brands/lg-logo.webp",
   },
   {
+    name: "Samsung",
+  },
+  {
     name: "Midea",
     src: "/images/brands/midea-logo.png",
+  },
+  {
+    name: "TCL",
+    src: "/images/brands/tcl-logo.png",
   },
   {
     name: "Philco",
     src: "/images/brands/philco-logo.png",
   },
   {
-    name: "TCL",
-    src: "/images/brands/tcl-logo.png",
+    name: "Gree",
+    src: "/images/brands/gree-logo.jpg",
+  },
+  {
+    name: "Trane",
   },
 ];
 
 type LogoItem = {
   name: string;
-  src: string;
+  src?: string;
 };
 
 type LogoStripProps = {
@@ -73,15 +85,21 @@ function LogoStrip({ eyebrow, title, description, logos, gridClassName = "md:gri
         <div className={`mt-8 grid gap-4 ${gridClassName}`}>
           {logos.map((logo, index) => (
             <AnimatedSection key={logo.name} delay={index * 120}>
-              <div className="flex h-32 items-center justify-center rounded-[24px] border border-slate-200 bg-slate-50 px-6 py-5 shadow-sm transition-transform duration-300 hover:-translate-y-1">
+              <div className="flex h-32 items-center justify-center rounded-md border border-slate-200 bg-slate-50 px-6 py-5 shadow-sm transition-transform duration-300 hover:-translate-y-1">
                 <div className="relative h-full w-full">
-                  <Image
-                    src={logo.src}
-                    alt={`Logo da empresa ${logo.name}`}
-                    fill
-                    sizes="(min-width: 1024px) 20vw, (min-width: 640px) 40vw, 100vw"
-                    className="object-contain"
-                  />
+                  {logo.src ? (
+                    <Image
+                      src={logo.src}
+                      alt={`Logo da empresa ${logo.name}`}
+                      fill
+                      sizes="(min-width: 1024px) 20vw, (min-width: 640px) 40vw, 100vw"
+                      className="object-contain"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center text-center text-2xl font-bold uppercase text-[#173B69]">
+                      {logo.name}
+                    </div>
+                  )}
                 </div>
               </div>
             </AnimatedSection>
@@ -96,8 +114,8 @@ export function BrandSpecialistsStrip() {
   return (
     <LogoStrip
       eyebrow="Marcas"
-      title="Especialistas nas Seguintes Marcas"
-      description="Atendimento técnico especializado para as principais marcas de ar-condicionado do mercado."
+      title="Assist\u00eancia especializada nas principais marcas"
+      description="Trabalhamos com os principais fabricantes de ar-condicionado do mercado."
       logos={specialistBrands}
       gridClassName="sm:grid-cols-2 lg:grid-cols-3"
     />
@@ -109,9 +127,9 @@ export default function PartnersStrip() {
     <LogoStrip
       eyebrow="Parceiros"
       title="Empresas que confiam no nosso trabalho"
-      description="Parcerias que reforçam nossa credibilidade em instalação, manutenção e atendimento profissional."
+      description="Parcerias que refor\u00e7am nossa credibilidade em instala\u00e7\u00e3o, manuten\u00e7\u00e3o e atendimento profissional."
       logos={partners}
-      gridClassName="md:grid-cols-2"
+      gridClassName="sm:grid-cols-2 lg:grid-cols-3"
     />
   );
 }

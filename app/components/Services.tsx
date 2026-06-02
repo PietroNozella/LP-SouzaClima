@@ -28,7 +28,7 @@ const services = [
   {
     title: "Manuten\u00e7\u00e3o",
     description:
-      "Manuten\u00e7\u00e3o preventiva e corretiva para manter os equipamentos funcionando com efici\u00eancia, seguran\u00e7a e maior vida \u00fatil.",
+      "Manuten\u00e7\u00e3o preventiva, corretiva e PMOC (Plano de Manuten\u00e7\u00e3o, Opera\u00e7\u00e3o e Controle) para manter os equipamentos funcionando com efici\u00eancia, seguran\u00e7a e maior vida \u00fatil.",
     icon: (
       <svg className="h-9 w-9" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="m14.7 6.3 3 3M5 19l6.4-6.4M13 5l6 6-7.5 7.5a4.24 4.24 0 0 1-6 0 4.24 4.24 0 0 1 0-6L13 5Z" />

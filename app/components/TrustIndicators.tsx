@@ -2,16 +2,16 @@
 
 const indicators = [
   {
-    number: "120+",
-    label: "Instala\u00e7\u00f5es Conclu\u00eddas",
+    number: "2.992",
+    label: "Manuten\u00e7\u00f5es Conclu\u00eddas",
   },
   {
-    number: "180+",
-    label: "Clientes Satisfeitos",
-  },
-  {
-    number: "250+",
+    number: "4.992",
     label: "Equipamentos Instalados",
+  },
+  {
+    number: "7.984",
+    label: "Clientes Satisfeitos",
   },
 ];
 

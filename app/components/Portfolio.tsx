@@ -16,13 +16,13 @@ const slides = [
   },
   {
     src: "/images/carrossel4.jpg",
-    alt: "Instala\u00e7\u00e3o de m\u00faltiplas condensadoras",
-    label: "Instala\u00e7\u00e3o",
+    alt: "Instala\u00e7\u00e3o de sistema de duto em ambiente comercial",
+    label: "Instala\u00e7\u00e3o de Duto",
   },
   {
     src: "/images/carrossel3.jpg",
-    alt: "Instala\u00e7\u00e3o de sistema de duto em ambiente comercial",
-    label: "Instala\u00e7\u00e3o de Duto",
+    alt: "Instala\u00e7\u00e3o de m\u00faltiplas condensadoras",
+    label: "Instala\u00e7\u00e3o",
   },
 ];
 
